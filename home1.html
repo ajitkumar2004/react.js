@@ -1,0 +1,27 @@
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<style>
+    .apple{
+        height:100px;
+        width:100px;
+        border:1px solid black;
+        display:inline-block;
+        text-align:center;
+        line-height: 100px;
+        
+    }
+        </style>
+<script type="text/babel">
+   const Orange=(greps)=>
+   {
+    return <div className="apple">{greps.n}</div>
+   }
+    function App()
+    {
+  return <div> <div><Orange n="1"/><Orange n="2"/><Orange n="3"/></div><div><Orange n="4"/><Orange n="5"/><Orange n="6"/></div><div><Orange n="7"/><Orange n="8"/><Orange n="9"/></div></div>
+  
+}
+    ReactDOM.render(<App/>,document.getElementById("root"))
+</script>

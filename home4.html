@@ -1,0 +1,13 @@
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+function App()
+{
+    return React.createElement('h2',{id:"i1",name:"n1"},"Apple is a best fruite to eat");
+}
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+//ReactDOM.render(<App/>,document.getElementById("root"));
+</script>

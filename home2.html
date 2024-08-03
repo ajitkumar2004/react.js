@@ -1,0 +1,37 @@
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+class App extends React.Component {
+    fnADD()
+    {
+        let n1ref=document.getElementById("n1");
+        let n1=n1ref.value;
+        n1=Number(n1);
+        let n2ref=document.getElementById("n2");
+        let n2=n2ref.value;
+        n2=Number(n2);
+        let sum=n1+n2;
+        alert(sum);
+        let resultref=document.getElementById("result");
+        resultref.innerText=sum;
+    }
+    render()
+    {
+        return <div>
+<p>
+<b>NO1:</b><input id="n1"/>
+</p>
+<p>
+<b>NO2:</b><input id="n2"/>
+</p>
+<p>
+<button onClick={this.fnADD}>Add</button>
+    </p>
+    <h1 id="result"></h1>
+            </div>
+    }
+} 
+ReactDOM.render(<App />, document.getElementById('root'));
+</script>
