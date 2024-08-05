@@ -1,0 +1,29 @@
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+   class Ball extends React.Component{
+    render()
+    {
+        return <div>
+
+{this.props.name}
+            </div>
+    }
+   }
+   class Apple extends React.Component
+   {
+    constructor()
+    {
+        super();
+        this.content="apple is a good fruite to eat";
+
+    }
+    render()
+    {
+        return <div><Ball name={this.content}/></div>
+    }
+}
+   ReactDOM.render(<Apple/>,document.getElementById("root"));
+</script>

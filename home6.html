@@ -1,0 +1,47 @@
+
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+   class App extends React.Component
+{
+    constructor()
+    {
+        super();
+        this.state={
+content:"apple"
+        };
+    }
+    fun1()
+    {
+       
+        setTimeout(()=>
+    {
+this.setState(
+    {
+        content:"greps"
+
+    }
+)
+    },5000);
+    setTimeout(()=>
+    {
+this.setState(
+    {
+        content:"guava"
+
+    }
+)
+    },3000);
+       
+       
+       
+    }
+    render()
+    {
+return <div><h1>{this.state.content}</h1><p><button onClick={this.fun1.bind(this)}>click </button></p></div>
+    }
+}
+   ReactDOM.render(<App/>,document.getElementById("root"));
+</script>
