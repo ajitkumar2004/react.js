@@ -1,0 +1,57 @@
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<style>
+    .green
+    {
+        color:green;
+    }
+    .red
+    {
+        color:red;
+    }
+</style>
+<script type="text/babel">
+   class App extends React.Component
+   {
+    constructor()
+    {
+        super();
+    this.state={
+        res:"",
+        clr:""
+    }
+    }
+    fnClick()
+    {
+        let num=document.getElementById("n1");
+       let num1=num.value;
+       num1=Number(num1);
+        let result="odd"
+        //let _cls="red"
+        if(num1%2==0)
+    {
+        result="even"
+        //_cls="green"
+    }
+    this.setState({
+        res:result
+        //clr:_cls
+    })
+    }
+    render()
+    {
+        const {res}=this.state;
+        return <div>
+
+<p>input:<input id="n1"/></p>
+<p><button onClick={this.fnClick.bind(this)}>click</button></p>
+<h3 className={res=='even'?'green':'red'}>{res}</h3>
+            </div>
+    }
+   }
+   
+ ReactDOM.render(<App/>,document.getElementById("root"));
+   
+</script>

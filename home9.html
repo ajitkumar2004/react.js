@@ -8,7 +8,9 @@
     {
         return <div>
 
-{this.props.name}
+<h2>{this.props.name}</h2> 
+
+<h2>{this.props.country}</h2>
             </div>
     }
    }
@@ -17,12 +19,26 @@
     constructor()
     {
         super();
-        this.content="apple is a good fruite to eat";
+      this.state={content:"hello",
+        city:"puri"
+      };
+      setTimeout(()=>
+    {
+this.setState(
+    {
+        content:"greps"
 
     }
+)},5000); 
+
+    }
+   
+      
     render()
     {
-        return <div><Ball name={this.content}/></div>
+        return <div>
+            <h1>{this.state.city}</h1>
+            <Ball name={this.state.content} country="india"/></div>
     }
 }
    ReactDOM.render(<Apple/>,document.getElementById("root"));

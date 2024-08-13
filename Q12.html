@@ -1,0 +1,57 @@
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+   class Apple extends React.Component{
+    constructor()
+    {
+super();
+this.state={
+    result:""
+};
+//this.fun1=this.fun1.bind(this);
+
+
+    }
+    fun1=(operation)=>
+    {
+        let numx=document.getElementById("n1");
+        let num1=Number(numx.value);
+        let numy=document.getElementById("n2");
+        let num2=Number(numy.value);
+        let result;
+        switch(operation)
+        {
+        case 'Add':result=num1+num2;
+        break;
+        case 'sub':result=num1-num2;
+        break;
+        case 'mul':reslut=num1*num2;
+        break;
+        case 'div':result=num1/num2;
+        break;
+        default:result="invalidOPeration";
+        }
+        this.setState({
+          result:  result
+        })
+    }
+    render()
+    {
+        return(
+<div>
+<p>num1:<input  id="n1"/></p>
+<p>num2:<input id="n2"/></p>
+<p><button onClick={()=>this.fun1('Add')}>Add</button>
+   
+    </p>
+<h1 id="result">{this.state.result}</h1>
+    </div>
+);
+    }
+   }
+   const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Apple/>);
+   
+</script>

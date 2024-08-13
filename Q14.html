@@ -1,0 +1,72 @@
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    const myCtx=React.createContext()
+    class D extends React.Component
+    {
+        render()
+        {
+            return <div>
+<B/>
+<C/>
+                </div>
+        }
+    }
+    class B extends React.Component
+    {
+        render()
+        {
+            return <div>
+<h3>B</h3>
+<myCtx.Consumer>
+    {
+        (data)=>
+    {
+        return <h3> {data} </h3>;
+    }
+    }
+
+   </myCtx.Consumer>
+                </div>
+        }
+    }
+    class C extends React.Component
+    {
+        render()
+        {
+            return <div>
+<h3>C</h3>
+<myCtx.Consumer>
+    {
+        (data)=>
+    {
+        return <h3> {data} </h3>;
+    }
+    }
+
+   </myCtx.Consumer>
+                </div>
+        }
+    }
+class Apple extends React.Component
+{
+    constructor()
+    {
+        super();
+        this.name="sachin"
+    }
+    render()
+
+    {
+        return <div>
+<myCtx.Provider value={this.name}>
+<D/>
+   </myCtx.Provider>
+            </div>
+    }
+}const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Apple/>);
+
+</script>

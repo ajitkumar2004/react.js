@@ -1,0 +1,65 @@
+<script src="react.development.js"></script>
+<script src="babel.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+   
+   class A extends React.Component
+   {
+    
+    myref()
+    {
+        const name=this.refs.nameRef.value;
+       this.props.f(name);
+    }
+    render()
+    {
+        return <div>
+ <h1>this is the child Component A </h1>
+ <p>id:<input ref="nameRef"/></p>
+ <p><button onClick={this.myref.bind(this)}>click</button></p>
+ </div>       
+    }    
+}
+class B extends React.Component
+   {
+   
+    render()
+
+    {
+        return <div>
+
+<h1>this is the child Component B</h1>
+<h3>{this.props.n1}</h3>
+            </div>
+    }
+}
+   class Apple extends React.Component
+   {
+    constructor(){
+        super();
+        this.state={
+name:''
+        }
+        this.f1=this.f1.bind(this);
+    }
+    f1(value)
+    {
+        
+        this.setState({
+name:value
+        })
+    }
+    render()
+    {
+        return <div>
+
+<h1>this is the parent</h1>
+<A f={this.f1}/>
+<B n1={this.state.name}/>
+            </div>
+    }
+   }
+   const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Apple/>);
+</script>
